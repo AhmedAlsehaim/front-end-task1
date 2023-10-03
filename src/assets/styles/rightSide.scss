@@ -1,0 +1,201 @@
+@import "./variables.scss";
+@import "./mainContent.scss";
+@import "./sidebar.scss";
+.right {
+  margin-top: 1.4rem;
+  float: right;
+  max-width: 300px;
+  height: 990px;
+
+  .top {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+
+    .darklight-mode {
+      display: flex;
+      align-items: center; /* Vertically align items in the container */
+      gap: 0; /* Adjust the gap as needed */
+      background-color: #dbdbf3;
+      border-radius: 6px;
+      height: 30px;
+    }
+
+    span {
+      font-size: 1.2rem;
+      padding-right: 10px;
+      padding-left: 10px;
+      width: 50%;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.active {
+        background: $soft-blue;
+        color: white;
+        border-radius: 6px;
+      }
+    }
+    .profile {
+      display: flex;
+      gap: 2rem;
+
+      .info {
+        text-align: right;
+        margin-left: 40px;
+      }
+
+      .profile-photo img {
+        transform: translateY(15px);
+      }
+    }
+  }
+
+  .recent-updates {
+    margin-top: 1rem;
+
+    h2 {
+      margin-bottom: 0.8rem;
+    }
+
+    .Updates {
+      background: $card-color;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      padding-top: 16px;
+
+      .profile-persons {
+        display: grid;
+        grid-template-columns: 2.6rem auto;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        .Profile-photo {
+          margin-top: 5px;
+          margin-right: 10px;
+          margin-bottom: 15px;
+          margin-left: 10px;
+          transform: translateY(30px);
+          transform: translateX(15px);
+        }
+
+        .Text {
+          font-size: 12px;
+          padding-left: 2.5rem;
+        }
+      }
+    }
+  }
+
+  .sales-analytics {
+    margin-top: 2rem;
+    height: 539px;
+
+    h2 {
+      margin-bottom: 0.8rem;
+    }
+
+    .item {
+      background: $card-color;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.7rem;
+      padding: 1.4rem 10px;
+      border-radius: 3px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      /* transition: all 300ms ease;*/
+      border-radius: 10px;
+      height: 50px;
+
+      &:hover {
+        box-shadow: none;
+      }
+
+      .right-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin: 0;
+        width: 100%;
+      }
+
+      .icon {
+        padding: 0.6rem;
+        color: $card-color;
+        border-radius: 50%;
+        background: #5454c6;
+        display: flex;
+      }
+
+      &.offline-orders .icon {
+        background: #ff6464;
+      }
+
+      &.new-customer .icon {
+        background: #00ff94;
+      }
+    }
+
+    .collapse-all {
+      background: $card-color;
+      display: flex;
+      border: 2px;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      width: 298px;
+      height: 50px;
+      margin-bottom: 0.7rem;
+      padding: 1.4rem 10px;
+      border-radius: 10px;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      h3 {
+        font-weight: 600;
+      }
+    }
+
+    .add-product {
+      background: transparent;
+      border: 2px dashed $soft-blue;
+      color: $soft-blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      width: 298px;
+      height: 50px;
+      margin-bottom: 0.7rem;
+      padding: 1.4rem 10px;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      h3 {
+        font-weight: 600;
+      }
+    }
+
+    .item.new-customer .right-info .percentage {
+      color: greenyellow;
+    }
+
+    .item.online-orders .right-info .percentage {
+      color: greenyellow;
+    }
+
+    .item.offline-orders .right-info .percentage {
+      color: red;
+    }
+  }
+}

@@ -1,0 +1,232 @@
+@import "./variables.scss";
+
+body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &.dark-mode {
+    --background-color: #1d1d1d;
+    --text-color: #ffffff;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+.mainContent {
+  max-width: 720px;
+  padding: 0.5rem;
+  margin-left: 252px;
+
+  &-calendar {
+    display: inline-block;
+    background-color: #dbdbf3;
+    opacity: 70%;
+    margin-top: 0.2rem;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+  }
+  &-calendar input[type="date"] {
+    background: transparent;
+    border: transparent;
+    color: 000000;
+    opacity: 60%;
+    font-size: 0.9rem;
+  }
+
+  &-highlight {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+
+    &-total {
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+      margin-top: 16px;
+      margin-right: 10px;
+      border-radius: 20px;
+      padding: 16px;
+      background-color: $card-color;
+
+      &:hover {
+        box-shadow: none;
+      }
+      .mainContent-total-iconBackground2 {
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: #ff6464;
+        border-radius: 50%;
+      }
+      .mainContent-total-iconBackground3 {
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: #00ff94;
+        border-radius: 50%;
+      }
+      .mainContent-total-center {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .mainContent-center-small {
+          font-size: 10px;
+          color: #a7a7a7;
+        }
+
+        .mainContent-center-progress {
+          /* Styles for progress bar container */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 8px;
+
+          .mainContent-progress-circle81 {
+            /* Styles for circular progress bar */
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: relative;
+            background: radial-gradient(
+                closest-side,
+                $card-color 79%,
+                transparent 80% 100%
+              ),
+              conic-gradient(from 90deg, #5454c6 81%, transparent 0);
+          }
+
+          .mainContent-progress-circle62 {
+            /* Styles for circular progress bar */
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: relative;
+            background: radial-gradient(
+                closest-side,
+                $card-color 79%,
+                transparent 80% 100%
+              ),
+              conic-gradient(from 90deg, #5454c6 62%, transparent 0);
+          }
+
+          .mainContent-progress-circle44 {
+            /* Styles for circular progress bar */
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: relative;
+            background: radial-gradient(
+                closest-side,
+                $card-color 79%,
+                transparent 80% 100%
+              ),
+              conic-gradient(from 90deg, #5454c6 44%, transparent 0);
+          }
+
+          .mainContent-progress-number {
+            /* Styles for progress number */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: grey; /* Text color */
+          }
+        }
+      }
+    }
+  }
+
+  &-orders {
+    background-color: $card-color;
+    padding: 20px;
+    box-shadow: 0px 4px 8px $shadow-color;
+    border-radius: 8px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        padding: 10px;
+        text-align: center;
+      }
+
+      th {
+        background-color: $card-color;
+        color: #000000;
+        font-weight: bold;
+        border-bottom: 2px solid $card-color;
+      }
+
+      td {
+        color: $dark-grey;
+        border-bottom: 1px solid $dark-grey;
+        padding-top: 16px;
+
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          color: $dark-grey;
+        }
+
+        &:nth-child(4) {
+          &.pending {
+            color: $soft-yellow;
+          }
+          &.declined {
+            color: $soft-red;
+          }
+          &.delivered {
+            color: $soft-blue;
+          }
+        }
+
+        &:nth-child(5) {
+          color: $soft-blue-light;
+          cursor: pointer;
+        }
+
+        &:hover {
+          color: $soft-blue;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center; /* Horizontally center the button */
+      align-items: center;
+      margin-top: 20px;
+
+      button {
+        background: none;
+        border: none;
+        color: #3870b3;
+        cursor: pointer;
+        padding: 0;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+}

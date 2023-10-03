@@ -1,0 +1,54 @@
+@import "./variables.scss";
+@import "./mainContent.scss";
+@import "./rightSide.scss";
+@import "./sidebar.scss";
+
+@media screen and (max-width: 1320px) {
+  .l-left {
+    display: none;
+  }
+  .mainContent {
+    margin-left: 0 !important;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  body {
+    display: block !important;
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .right {
+    float: left !important;
+    max-width: 100%;
+  }
+
+  .mainContent-highlight {
+    display: grid !important;
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .top {
+    position: absolute;
+    top: 0px;
+    right: 32px;
+    padding: 1rem;
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 508px) {
+  td {
+    font-size: 10px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    border-bottom: none !important;
+  }
+  th {
+    font-size: 12px;
+    padding: 0px;
+    margin: 0px;
+  }
+  .darklight-mode {
+    display: none !important;
+  }
+}

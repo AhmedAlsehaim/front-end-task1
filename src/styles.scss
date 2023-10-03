@@ -1,0 +1,34 @@
+@import "../src/assets/styles/variables.scss";
+html,
+body {
+  background-color: #ececf9;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &.dark-mode {
+    --background-color: #1d1d1d;
+    --text-color: #ffffff;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
